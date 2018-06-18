@@ -8,7 +8,7 @@ from snippets.serializers import UserSerializer
 from snippets.permissions import IsOwnerOrReadOnly
 
 
-class SnippetList(generics.ListAPIView):
+class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
